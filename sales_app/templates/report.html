@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Отчет о продажах</title>
+</head>
+<body>
+    <h1>Отчет о продажах</h1>
+    <table border="1">
+        <tr>
+            <th>ID Продажи</th>
+            <th>ID Товара</th>
+            <th>ID Клиента</th>
+            <th>Дата продажи</th>
+            <th>Количество проданных</th>
+            <th>Итоговая сумма</th>
+        </tr>
+        {% for sale in sales %}
+            <tr>
+                <td>{{ sale.SaleID }}</td>
+                <td>{{ sale.ProductID }}</td>
+                <td>{{ sale.CustomerID }}</td>
+                <td>{{ sale.SaleDate }}</td>
+                <td>{{ sale.QuantitySold }}</td>
+                <td>{{ sale.TotalAmount }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Назад</a>
+</body>
+</html>

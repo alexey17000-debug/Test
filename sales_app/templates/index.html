@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Учет продаж</title>
+</head>
+<body>
+    <h1>Учет продаж</h1>
+    <form method="POST" action="/add_sale">
+        <select name="product_id">
+            {% for product in products %}
+                <option value="{{ product.ProductID }}">{{ product.ProductName }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="customer_id" placeholder="ID клиента" required>
+        <input type="text" name="quantity_sold" placeholder="Количество" required>
+        <button type="submit">Добавить продажу</button>
+    </form>
+    <a href="/report">Смотреть отчет о продажах</a>
+</body>
+</html>
